@@ -2,9 +2,10 @@
   <head>
     <!--link rel="stylesheet" href="/assets/css/main.css"-->
   </head>
-  <body ng-app="lolaSeats" class="no-js" lang="" >
-    <div ng-controller="RootController as rootCtrl">
-      {{rootCtrl}}
+  <body ng-app="lolaSeats" class="no-js" lang="" ng-controller="RootController as rootCtrl">
+    <div ng-repeat="seat in rootCtrl.seatList">
+
+      <div seat-specs></div>
     </div>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
