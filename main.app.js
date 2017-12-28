@@ -1,5 +1,37 @@
 var app = angular.module('lolaSeats', []);
 
+// filter thru the seat data.
+// will need to do this for
+// - cabin
+// - seat order (orderby), based on letter and number (create columns) with aisles in mind
+// - vacancy
+
+
+// Setup the filter by cabin type
+app.filter("cabinFilter", [function()
+{
+  return function(seats, cabinName){
+    var cabinSeats = [];
+    /*if (cabin == 0) {
+      cabinName='First';
+    }*/
+    console.log(cabinName);
+    angular.forEach(seats, function(seat){
+      console.log(seat);
+      console.log(seats);
+      console.log(seats[0]);
+
+      if (seat.class == cabinName) {
+        cabinSeats.push(seat)
+      }
+
+
+    });
+    return cabinSeats;
+  };
+}]);
+
+
 // create a seat directive with all info
 app.directive("seatSpecs", function(){
 return {
@@ -7,6 +39,7 @@ return {
   templateUrl: 'seat-specs.html'
        };
 });
+
 
 app.controller('RootController', ['$scope', '$http', function($scope, $http)
 {
@@ -25,8 +58,6 @@ app.controller('RootController', ['$scope', '$http', function($scope, $http)
   .error(function(err) {
     console.error('Repos error', err);
   });
-
-  console.log(self.seatList);
 
 
 }]);

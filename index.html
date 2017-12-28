@@ -3,10 +3,36 @@
     <!--link rel="stylesheet" href="/assets/css/main.css"-->
   </head>
   <body ng-app="lolaSeats" class="no-js" lang="" ng-controller="RootController as rootCtrl">
-    <div ng-repeat="seat in rootCtrl.seatList">
 
-      <div seat-specs></div>
+
+
+    <div class="cabin first" style="color:green">
+      {{seat}}
+
+      <div ng-repeat="seat in rootCtrl.seatList | cabinFilter:'First' track by seat.row+seat.seat">
+        <div seat-specs>
+
+        </div>
+      </div>
     </div>
+    <div class="cabin business" style="color:red">
+      <div ng-repeat="seat in rootCtrl.seatList | cabinFilter:'Business' track by seat.row+seat.seat">
+
+        <div seat-specs>
+
+        </div>
+      </div>
+    </div>
+    <div class="cabin coach" style="color:blue">
+      <div ng-repeat="seat in rootCtrl.seatList | cabinFilter:'Economy' track by seat.row+seat.seat">
+
+        <div seat-specs>
+
+        </div>
+      </div>
+    </div>
+
+
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular-route.min.js"></script>
