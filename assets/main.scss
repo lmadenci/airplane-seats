@@ -1,0 +1,12 @@
+@import "neat/_neat.scss";
+
+.seat-specs {
+  display: inline !important;
+}
+
+.cabin {
+  &.business{
+    color: black !important;
+
+  }
+}

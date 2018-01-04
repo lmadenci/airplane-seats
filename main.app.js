@@ -12,9 +12,7 @@ app.filter("cabinFilter", [function()
 {
   return function(seats, cabinName){
     var cabinSeats = [];
-    /*if (cabin == 0) {
-      cabinName='First';
-    }*/
+
     console.log(cabinName);
     angular.forEach(seats, function(seat){
       console.log(seat);

@@ -1,6 +1,6 @@
 <html>
   <head>
-    <!--link rel="stylesheet" href="/assets/css/main.css"-->
+    <link rel="stylesheet" href="/assets/main.css"-->
   </head>
   <body ng-app="lolaSeats" class="no-js" lang="" ng-controller="RootController as rootCtrl">
 
@@ -10,7 +10,7 @@
       {{seat}}
 
       <div ng-repeat="seat in rootCtrl.seatList | cabinFilter:'First' track by seat.row+seat.seat">
-        <div seat-specs>
+        <div class="seat-specs" seat-specs>
 
         </div>
       </div>
@@ -18,7 +18,7 @@
     <div class="cabin business" style="color:red">
       <div ng-repeat="seat in rootCtrl.seatList | cabinFilter:'Business' track by seat.row+seat.seat">
 
-        <div seat-specs>
+        <div class="seat-specs" seat-specs>
 
         </div>
       </div>
@@ -26,7 +26,7 @@
     <div class="cabin coach" style="color:blue">
       <div ng-repeat="seat in rootCtrl.seatList | cabinFilter:'Economy' track by seat.row+seat.seat">
 
-        <div seat-specs>
+        <div class="seat-specs" seat-specs>
 
         </div>
       </div>
